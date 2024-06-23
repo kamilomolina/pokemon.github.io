@@ -1,0 +1,218 @@
+body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: rgba(248, 248, 248, 0.9);
+    color: #333333;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    width: 100%; 
+    top: 0;
+    z-index: 1000; 
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content .logo {
+    max-height: 50px;
+    margin-right: 20px;
+}
+
+.paginactual {
+    color: #0070c9;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a,
+nav ul li label {
+    color: #333333;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li label:hover {
+    color: #0070c9;
+}
+
+main {
+    padding: 140px 20px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+#informacion-pokemon {
+    margin-top: 80px;
+}
+
+h2 {
+    color: #0070c9;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+footer {
+    background-color: #f8f8f8;
+    color: #333333;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.redes-sociales {
+    margin-top: 10px;
+}
+
+.redes-sociales a {
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: transform 0.3s, color 0.3s;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+}
+
+.redes-sociales a::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.redes-sociales a.facebook {
+    background-color: #3b5998;
+}
+
+.redes-sociales a.facebook::before {
+    background-image: url('../imagenes/red_social/facebook.png');
+}
+
+.redes-sociales a.x {
+    background-color: #000000;
+}
+
+.redes-sociales a.x::before {
+    background-image: url('../imagenes/red_social/x.png');
+}
+
+.redes-sociales a.instagram {
+    background-color: #e1306c;
+}
+
+.redes-sociales a.instagram::before {
+    background-image: url('../imagenes/red_social/instagram.png');
+}
+
+.redes-sociales a:hover {
+    transform: scale(1.2);
+    color: white;
+}
+
+.menu .dropdown {
+    position: relative;
+}
+
+.menu .dropdown .submenu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    left: 0;
+    top: 100%; 
+    margin-top: 0;
+    min-width: 200px; 
+}
+
+.menu .dropdown .submenu li {
+    width: 100%;
+    text-align: center;
+}
+
+.menu .dropdown .submenu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.menu .dropdown .submenu li a:hover {
+    background-color: #f0f0f0;
+    color: #0070c9;
+    font-weight: bold;
+}
+
+.menu .dropdown-checkbox {
+    display: none; 
+}
+
+.menu .dropdown-checkbox:checked + label + .submenu {
+    display: block;
+}

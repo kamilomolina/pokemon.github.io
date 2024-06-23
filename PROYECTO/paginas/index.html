@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="../estilos/estilos_index.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
+            <h1>Mundo Pokémon</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html" class="paginactual">Inicio</a></li>
+                <li><a href="juegos.html">Juegos</a></li>
+                <li class="dropdown">
+                    <input type="checkbox" id="regiones-toggle" class="dropdown-checkbox">
+                    <label for="regiones-toggle">Regiones</label>
+                    <ul class="submenu">
+                        <li><a href="pokedex_de_kanto.html">Kanto</a></li>
+                        <li><a href="pokedex_de_johto.html">Johto</a></li>
+                        <li><a href="pokedex_de_hoenn.html">Hoenn</a></li>
+                    </ul>
+                </li>
+                <li><a href="acercade.html">Acerca de Pokédex</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="slider-container">
+            <h1>Los Pokémon evolucionan?</h1>
+            <div class="slider">
+                <div class="slide"> 
+                    <div class="inner">
+                        <div class="info-bottom">
+                            <img src="../imagenes/evoluciones/Bulbasaur.png" alt="Descripción de la imagen 1">
+                            <img src="../imagenes/evoluciones/Ivysaur.png" alt="Descripción de la imagen 2">
+                            <img src="../imagenes/evoluciones/Venusaur.png" alt="Descripción de la imagen 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <section id="informacion-pokemon">
+            <h2>Sobre Pokémon</h2>
+            <p>Pokémon es una franquicia de medios que se centra en criaturas ficticias llamadas "Pokémon", que los humanos, conocidos como Entrenadores Pokémon, atrapan y entrenan para luchar entre sí como un deporte. La franquicia fue creada por Satoshi Tajiri y Ken Sugimori, y es administrada por The Pokémon Company (una empresa conjunta entre Nintendo, Game Freak y Creatures).</p>
+        </section>
+        <section id="informacion-pokedex">
+            <h2>¿Qué es una Pokédex?</h2>
+            <p>La Pokédex es una enciclopedia electrónica ficticia que los Entrenadores Pokémon llevan consigo para registrar los datos de las criaturas Pokémon que encuentran y capturan. Cada región tiene su propia Pokédex con entradas específicas para los Pokémon nativos de esa región.</p>
+        </section>
+        <section id="tipos-pokemon">
+            <h2>Tipos de Pokémon</h2>
+            <table>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Fortalezas</th>
+                    <th>Debilidades</th>
+                </tr>
+                <tr>
+                    <td>Fuego</td>
+                    <td>Planta, Bicho, Acero, Hielo</td>
+                    <td>Agua, Roca, Tierra</td>
+                </tr>
+                <tr>
+                    <td>Agua</td>
+                    <td>Fuego, Roca, Tierra</td>
+                    <td>Eléctrico, Planta</td>
+                </tr>
+                <tr>
+                    <td>Planta</td>
+                    <td>Agua, Tierra, Roca</td>
+                    <td>Fuego, Hielo, Veneno, Volador, Bicho</td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+    <footer>
+        <p>@Todos los derechos Reservados</p>
+        <div class="redes-sociales">
+            <a href="#" class="facebook"></a>
+            <a href="#" class="x"></a>
+            <a href="#" class="instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>
