@@ -32,6 +32,19 @@ header {
 .paginactual {
     color: #0070c9;
 }
+#region-johto {
+    margin-top: 40px;
+}
+#region-johto h2 {
+    color: #0070c9;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 
 nav ul {
     list-style: none;
@@ -107,6 +120,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 .pokemon:hover .pokemon-details {
@@ -178,4 +192,15 @@ footer {
 .redes-sociales a:hover {
     transform: scale(1.2);
     color: white;
+}
+.mapa-johto {
+    position:relative; 
+}
+
+.mapa-johto img {
+    margin-top: 10px; 
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    height: auto;
 }

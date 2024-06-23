@@ -29,22 +29,9 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <div class="slider-container">
-            <h1>Los Pokémon evolucionan?</h1>
-            <div class="slider">
-                <div class="slide"> 
-                    <div class="inner">
-                        <div class="info-bottom">
-                            <img src="../imagenes/evoluciones/Bulbasaur.png" alt="Descripción de la imagen 1">
-                            <img src="../imagenes/evoluciones/Ivysaur.png" alt="Descripción de la imagen 2">
-                            <img src="../imagenes/evoluciones/Venusaur.png" alt="Descripción de la imagen 3">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>        
 
+<main>
+       
         <section id="informacion-pokemon">
             <h2>Sobre Pokémon</h2>
             <p>Pokémon es una franquicia de medios que se centra en criaturas ficticias llamadas "Pokémon", que los humanos, conocidos como Entrenadores Pokémon, atrapan y entrenan para luchar entre sí como un deporte. La franquicia fue creada por Satoshi Tajiri y Ken Sugimori, y es administrada por The Pokémon Company (una empresa conjunta entre Nintendo, Game Freak y Creatures).</p>
@@ -52,14 +39,36 @@
         <section id="informacion-pokedex">
             <h2>¿Qué es una Pokédex?</h2>
             <p>La Pokédex es una enciclopedia electrónica ficticia que los Entrenadores Pokémon llevan consigo para registrar los datos de las criaturas Pokémon que encuentran y capturan. Cada región tiene su propia Pokédex con entradas específicas para los Pokémon nativos de esa región.</p>
+            <div class="pokedex">
+                <img src="../imagenes/otros/pokedex.gif" alt="Pokedex">
+            </div>
         </section>
+
+        <div class="slider-container">
+            <h1>¿Cómo evolucionan los pokemones?</h1>
+            <p>La evolución de los Pokémon es un proceso mediante el cual un Pokémon cambia de forma y a menudo de habilidades al alcanzar ciertos niveles, condiciones específicas, o al ser expuesto a ciertos objetos.</p>
+            <div class="slider">
+                <div class="slide"> 
+                    <div class="inner">
+                        <div class="info-bottom">
+                            <img src="../imagenes/evoluciones/Abra.png" alt="Descripción de la imagen 1">
+                            <img src="../imagenes/evoluciones/Kadabra.png" alt="Descripción de la imagen 2">
+                            <img src="../imagenes/evoluciones/Alakazam.png" alt="Descripción de la imagen 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+
         <section id="tipos-pokemon">
-            <h2>Tipos de Pokémon</h2>
+            <h2>Tabla de Tipos</h2>
             <table>
                 <tr>
                     <th>Tipo</th>
-                    <th>Fortalezas</th>
-                    <th>Debilidades</th>
+                    <th>Efectivo</th>
+                    <th>Débil</th>
+                    <th>Inmune</th>
                 </tr>
                 <tr>
                     <td>Fuego</td>
@@ -75,6 +84,89 @@
                     <td>Planta</td>
                     <td>Agua, Tierra, Roca</td>
                     <td>Fuego, Hielo, Veneno, Volador, Bicho</td>
+                </tr>
+                <tr>
+                    <td>Normal</td>
+                    <td>Neutro a todos los demás tipos.</td>
+                    <td>Lucha</td>
+                    <td>Fantasma</td>
+                </tr>
+                
+                <tr>
+                    <td>Eléctrico</td>
+                    <td>Agua, Volador</td>
+                    <td>Tierra</td>
+                </tr>
+                <tr>
+                    <td>Tierra</td>
+                    <td>Fuego, Eléctrico, Veneno, Roca, Acero</td>
+                    <td>Agua, Planta, Hielo</td>
+                    <td>Eléctrico</td>
+                </tr>
+                <tr>
+                    <td>Roca</td>
+                    <td>Fuego, Hielo, Volador, Bicho</td>
+                    <td>Agua, Planta, Lucha, Tierra, Acero</td>
+                </tr>                
+                <tr>
+                    <td>Hielo</td>
+                    <td>Volador, Planta, Tierra, Dragón</td>
+                    <td>Fuego, Lucha, Roca, Acero</td>
+                </tr>
+                <tr>
+                    <td>Lucha</td>
+                    <td>Normal, Hielo, Acero, Roca, Siniestro</td>
+                    <td>Volador, Psíquico, Hada</td>
+                </tr>
+                <tr>
+                    <td>Veneno</td>
+                    <td>Planta, Hada</td>
+                    <td>Psíquico, Tierra</td>
+                </tr>
+                <tr>
+                    <td>Psíquico</td>
+                    <td>Lucha, Veneno</td>
+                    <td>Bicho, Fantasma, Siniestro</td>
+                </tr>
+                <tr>
+                    <td>Fantasma</td>
+                    <td>Fantasma, Psíquico</td>
+                    <td>Fantasma, Siniestro</td>
+                    <td>Normal, Lucha</td>
+                </tr>
+                <tr>
+                    <td>Volador</td>
+                    <td>Planta, Lucha, Bicho</td>
+                    <td>Eléctrico, Hielo, Roca</td>
+                    <td>Tierra</td>
+                </tr>
+                <tr>
+                    <td>Bicho</td>
+                    <td>Planta, Psíquico, Siniestro</td>
+                    <td>Fuego, Volador, Roca</td>
+                </tr>
+                <tr>
+                    <td>Acero</td>
+                    <td>Hielo, Roca, Hada</td>
+                    <td>Fuego, Lucha, Tierra</td>
+                    <td>Veneno</td>
+                </tr>
+                <tr>
+                    <td>Dragón</td>
+                    <td>Dragón</td>
+                    <td>Dragón, Hielo, Hada</td>
+                </tr>
+                <tr>
+                    <td>Siniestro</td>
+                    <td>Psíquico, Fantasma</td>
+                    <td>Lucha, Bicho, Hada</td>
+                    <td>Psíquico</td>
+                </tr>
+                <tr>
+                    <td>Hada</td>
+                    <td>Lucha, Dragón, Siniestro</td>
+                    <td>Veneno, Acero</td>
+                    <td>Dragón</td>
                 </tr>
             </table>
         </section>

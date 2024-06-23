@@ -259,3 +259,17 @@ footer {
     font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     color: #0070c9;
 }
+.slider-container p {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: white;
+}
+
+.pokedex {
+    text-align:start;
+    margin-bottom: 1em;
+}
+
+.pokedex {
+    max-width: 50%;
+    height: auto;
+}
