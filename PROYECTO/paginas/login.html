@@ -3,79 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal</title>
-    <link rel="stylesheet" href="../estilos/estilos_index.css">
-    <link rel="stylesheet" href="../estilos/estilos_modal.css">
+    <title>Login - Mundo Pokémon</title>
+    <link rel="stylesheet" href="../estilos/estilos_login.css">
 </head>
 <body>
-    <!-- Página Principal -->
     <header>
         <div class="header-content">
             <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
-            <h1>Mundo Pokémon</h1>
+            <h1>Iniciar Sesión</h1>
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html" class="paginactual">Inicio</a></li>
-                <li><a href="juegos.html">Juegos</a></li>
-                <li class="dropdown">
-                    <input type="checkbox" id="regiones-toggle" class="dropdown-checkbox">
-                    <label for="regiones-toggle">Regiones</label>
-                    <ul class="submenu">
-                        <li><a href="pokedex_de_kanto.html">Kanto</a></li>
-                        <li><a href="pokedex_de_johto.html">Johto</a></li>
-                        <li><a href="pokedex_de_hoenn.html">Hoenn</a></li>
-                    </ul>
-                </li>
-                <li><a href="acercade.html">Acerca de Pokédex</a></li>
-            </ul>
-        </nav>
     </header>
-    <main>
-        <!-- Contenido principal aquí -->
-    </main>
 
-    <!-- Modal de Login -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Iniciar Sesión</h2>
-            <form id="loginForm">
-                <label for="username">Nombre de usuario:</label>
+    <main>
+        <section id="login">
+            <h2>Accede a tu cuenta</h2>
+            <form id="login-form">
+                <label for="username">Usuario:</label>
                 <input type="text" id="username" name="username" required>
+
                 <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" required>
+
                 <button type="submit">Iniciar Sesión</button>
             </form>
+            <p id="login-message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>@Todos los derechos Reservados</p>
+        <div class="redes-sociales">
+            <a href="#" class="facebook"></a>
+            <a href="#" class="x"></a>
+            <a href="#" class="instagram"></a>
         </div>
-    </div>
+    </footer>
 
     <script>
-        // Obtener el modal
-        var modal = document.getElementById("loginModal");
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío del formulario
 
-        // Obtener el botón que abre el modal
-        var authButton = document.getElementById("auth-button");
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-        // Obtener el elemento <span> que cierra el modal
-        var span = document.getElementsByClassName("close")[0];
+            // Aquí puedes agregar la lógica de autenticación real
+            // Para este ejemplo, simplemente redirigiremos a index.html si el formulario es enviado
 
-        // Cuando el usuario haga clic en el botón, abrir el modal 
-        authButton.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // Cuando el usuario haga clic en <span> (x), cerrar el modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // Cuando el usuario haga clic fuera del modal, cerrarlo
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+            if (username && password) { // Lógica básica de validación
+                localStorage.setItem('token', 'dummy-token'); // Guardar un token ficticio
+                localStorage.setItem('username', username); // Guardar el nombre de usuario
+                window.location.href = 'index.html'; // Redirigir al inicio
+            } else {
+                document.getElementById('login-message').textContent = 'Por favor, complete todos los campos.';
             }
-        }
+        });
     </script>
 </body>
 </html>

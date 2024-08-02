@@ -30,10 +30,8 @@
         </nav>
         <button id="auth-button" class="auth-button"></button>  <!-- Contenedor para el estado de autenticación -->
     </header>
-    </header>
 
-<main>
-       
+    <main>
         <section id="informacion-pokemon">
             <h2>Sobre Pokémon</h2>
             <p>Pokémon es una franquicia de medios que se centra en criaturas ficticias llamadas "Pokémon", que los humanos, conocidos como Entrenadores Pokémon, atrapan y entrenan para luchar entre sí como un deporte. La franquicia fue creada por Satoshi Tajiri y Ken Sugimori, y es administrada por The Pokémon Company (una empresa conjunta entre Nintendo, Game Freak y Creatures).</p>
@@ -61,7 +59,6 @@
                 </div>
             </div>
         </div>        
-
 
         <section id="tipos-pokemon">
             <h2>Tabla de Tipos</h2>
@@ -93,7 +90,6 @@
                     <td>Lucha</td>
                     <td>Fantasma</td>
                 </tr>
-                
                 <tr>
                     <td>Eléctrico</td>
                     <td>Agua, Volador</td>
@@ -172,7 +168,6 @@
                 </tr>
             </table>
         </section>
-
     </main>
     <footer>
         <p>@Todos los derechos Reservados</p>
@@ -183,8 +178,9 @@
         </div>
     </footer>
     <script>
-        // Obtener el token desde el almacenamiento local
+        // Obtener el token y el nombre de usuario desde el almacenamiento local
         const token = localStorage.getItem('token');
+        const username = localStorage.getItem('username');
     
         // Botón de autenticación
         const authButton = document.getElementById('auth-button');
@@ -199,8 +195,8 @@
             .then(response => response.json())
             .then(data => {
                 if (data.isAuthenticated) {
-                    // Mostrar el número de usuario si está autenticado
-                    authButton.innerHTML = `<a href="#">Usuario ${data.userId}</a>`;
+                    // Mostrar el nombre de usuario si está autenticado
+                    authButton.innerHTML = `<a href="#">Usuario ${username}</a>`;
                 } else {
                     // Mostrar el enlace de Login si no está autenticado
                     authButton.innerHTML = '<a href="login.html">Login</a>';
@@ -215,6 +211,5 @@
             authButton.innerHTML = '<a href="login.html">Login</a>';
         }
     </script>
-    
 </body>
 </html>
