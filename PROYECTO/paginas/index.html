@@ -28,7 +28,6 @@
                 <li><a href="acercade.html">Acerca de Pokédex</a></li>
             </ul>
         </nav>
-        <button id="auth-button" class="auth-button"></button>  <!-- Contenedor para el estado de autenticación -->
     </header>
 
     <main>
@@ -177,39 +176,5 @@
             <a href="#" class="instagram"></a>
         </div>
     </footer>
-    <script>
-        // Obtener el token y el nombre de usuario desde el almacenamiento local
-        const token = localStorage.getItem('token');
-        const username = localStorage.getItem('username');
-    
-        // Botón de autenticación
-        const authButton = document.getElementById('auth-button');
-    
-        if (token) {
-            fetch('/api/auth/isAuthenticated', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.isAuthenticated) {
-                    // Mostrar el nombre de usuario si está autenticado
-                    authButton.innerHTML = `<a href="#">Usuario ${username}</a>`;
-                } else {
-                    // Mostrar el enlace de Login si no está autenticado
-                    authButton.innerHTML = '<a href="login.html">Login</a>';
-                }
-            })
-            .catch(error => {
-                console.error('Error al verificar el estado de autenticación:', error);
-                authButton.innerHTML = '<a href="login.html">Login</a>';
-            });
-        } else {
-            // Mostrar el enlace de Login si no hay token
-            authButton.innerHTML = '<a href="login.html">Login</a>';
-        }
-    </script>
 </body>
 </html>
