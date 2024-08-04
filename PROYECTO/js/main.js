@@ -1,18 +1,15 @@
-const baseURL = 'http://localhost:3000/api'; // Cambia esto según la URL de tu backend
+const baseURL = 'http://localhost:3000/api'; 
 
-// Función para abrir el modal de inicio de sesión
 const openLoginModal = () => {
     console.log("Abrir modal de inicio de sesión");
     document.getElementById('login-modal').style.display = 'block';
 }
 
-// Función para abrir el modal de registro
 const openRegisterModal = () => {
     console.log("Abrir modal de registro");
     document.getElementById('register-modal').style.display = 'block';
 }
 
-// Función para cerrar el modal
 const closeModal = () => {
     console.log("Cerrar modal");
     document.getElementById('login-modal').style.display = 'none';
@@ -21,7 +18,6 @@ const closeModal = () => {
     document.getElementById('searchInput').value = '';
 }
 
-// Función para registrar un usuario
 const register = async () => {
     const username = document.getElementById('register-username').value;
     const password = document.getElementById('register-password').value;
@@ -29,16 +25,15 @@ const register = async () => {
 
     try {
         const response = await axios.post(`${baseURL}/users/register`, { username, password });
-        console.log(response.data); // Verificar la respuesta del servidor
+        console.log(response.data); 
         alert(response.data.message);
         closeModal();
     } catch (error) {
-        console.error(error.response.data); // Mostrar errores en la consola
+        console.error(error.response.data); 
         alert(error.response.data.message);
     }
 };
 
-// Función para iniciar sesión
 const login = async () => {
     const username = document.getElementById('login-username').value;
     const password = document.getElementById('login-password').value;
@@ -47,18 +42,17 @@ const login = async () => {
     try {
         const response = await axios.post(`${baseURL}/users/login`, { username, password });
         const token = response.data.token;
-        localStorage.setItem('token', token); // Guardar el token en el almacenamiento local
-        localStorage.setItem('username', username); // Guardar el nombre de usuario
+        localStorage.setItem('token', token);
+        localStorage.setItem('username', username); 
         updateLoginButton();
         alert('Login successful');
         closeModal();
     } catch (error) {
-        console.error(error.response.data); // Mostrar errores en la consola
+        console.error(error.response.data); 
         alert(error.response.data.message);
     }
 };
 
-// Función para cerrar sesión
 const logout = () => {
     console.log("Cerrando sesión");
     localStorage.removeItem('token');
@@ -66,7 +60,6 @@ const logout = () => {
     updateLoginButton();
 };
 
-// Función para actualizar el texto del botón de inicio de sesión
 const updateLoginButton = () => {
     const username = localStorage.getItem('username');
     const loginButton = document.querySelector('.login-button');
@@ -74,11 +67,11 @@ const updateLoginButton = () => {
     if (username) {
         loginButton.textContent = `Hola, ${username} (Cerrar sesión)`;
         loginButton.onclick = logout;
-        registerButton.style.display = 'none'; // Ocultar el botón de registro
+        registerButton.style.display = 'none';
     } else {
         loginButton.textContent = 'Iniciar Sesión';
         loginButton.onclick = openLoginModal;
-        registerButton.style.display = 'block'; // Mostrar el botón de registro
+        registerButton.style.display = 'block';
     }
 };
 
@@ -95,13 +88,10 @@ function scrollFunction() {
     }
 }
 
-// Función para hacer scroll hacia arriba
 function scrollToTop() {
-    document.body.scrollTop = 0; // Para Safari
-    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+    document.documentElement.scrollTop = 0;
 };
 
-// Función para mostrar el modal de búsqueda
 const showSearchModal = (content) => {
     const searchModal = document.getElementById('search-modal');
     const searchResults = document.getElementById('search-results');
@@ -109,7 +99,6 @@ const showSearchModal = (content) => {
     searchModal.style.display = 'block';
 };
 
-// Función para buscar Pokémon
 const searchPokemon = async () => {
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
     if (!searchInput) {
@@ -147,5 +136,4 @@ const searchPokemon = async () => {
     }
 };
 
-// Ejecutar la actualización del botón al cargar la página
 document.addEventListener('DOMContentLoaded', updateLoginButton);

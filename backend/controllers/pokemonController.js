@@ -1,6 +1,6 @@
 const Pokemon = require('../models/pokemon');
 
-// Obtener todos los Pokémon
+
 const getAllPokemons = async (req, res) => {
     try {
         const pokemons = await Pokemon.find();
@@ -10,7 +10,7 @@ const getAllPokemons = async (req, res) => {
     }
 };
 
-// Obtener Pokémon por región
+
 const getPokemonsByRegion = async (req, res) => {
     try {
         const region = req.params.region;
@@ -21,7 +21,7 @@ const getPokemonsByRegion = async (req, res) => {
     }
 };
 
-// Obtener un Pokémon por su ID
+
 const getPokemonById = async (req, res) => {
     try {
         const pokemon = await Pokemon.findById(req.params.id);
@@ -32,7 +32,7 @@ const getPokemonById = async (req, res) => {
     }
 };
 
-// Crear un nuevo Pokémon
+
 const createPokemon = async (req, res) => {
     const { numero, nombre, tipo, descripcion, imagen, region, habilidades } = req.body;
     const nuevoPokemon = new Pokemon({ numero, nombre, tipo, descripcion, imagen, region, habilidades });
@@ -45,7 +45,7 @@ const createPokemon = async (req, res) => {
     }
 };
 
-// Crear múltiples Pokémon
+
 const createMultiplePokemons = async (req, res) => {
     try {
         const pokemons = req.body;
@@ -56,7 +56,7 @@ const createMultiplePokemons = async (req, res) => {
     }
 };
 
-// Actualizar un Pokémon
+
 const updatePokemon = async (req, res) => {
     try {
         const updatedPokemon = await Pokemon.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -67,7 +67,7 @@ const updatePokemon = async (req, res) => {
     }
 };
 
-// Eliminar un Pokémon
+
 const deletePokemon = async (req, res) => {
     try {
         const deletedPokemon = await Pokemon.findByIdAndDelete(req.params.id);
@@ -80,12 +80,11 @@ const deletePokemon = async (req, res) => {
 const searchPokemon = async (req, res) => {
     try {
         const query = req.params.query;
-
-        // Crear un objeto de criterios de búsqueda
+        
         const searchCriteria = {
             $or: [
-                { nombre: new RegExp(query, 'i') }, // Buscar por nombre (insensible a mayúsculas/minúsculas)
-                { numero: isNaN(query) ? 0 : parseInt(query) } // Buscar por número si es un número
+                { nombre: new RegExp(query, 'i') },
+                { numero: isNaN(query) ? 0 : parseInt(query) } 
             ]
         };
 

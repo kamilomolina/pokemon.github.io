@@ -14,7 +14,7 @@ const fetchPokemonsByRegion = async (region) => {
 
 const displayPokemons = (pokemons) => {
     const pokedexContainer = document.getElementById('pokedex');
-    pokedexContainer.innerHTML = ''; // Limpiar contenido previo
+    pokedexContainer.innerHTML = '';
 
     pokemons.forEach(pokemon => {
         const pokemonElement = document.createElement('div');

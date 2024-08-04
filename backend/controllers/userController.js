@@ -1,7 +1,6 @@
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
-// Registro de usuario
 const registerUser = async (req, res) => {
     const { username, password } = req.body;
     try {
@@ -13,7 +12,6 @@ const registerUser = async (req, res) => {
     }
 };
 
-// Inicio de sesión de usuario
 const loginUser = async (req, res) => {
     const { username, password } = req.body;
     try {
@@ -28,7 +26,6 @@ const loginUser = async (req, res) => {
     }
 };
 
-// Eliminar un usuario
 const deleteUser = async (req, res) => {
     try {
         const user = await User.findByIdAndDelete(req.params.id);
@@ -41,7 +38,6 @@ const deleteUser = async (req, res) => {
     }
 };
 
-// Actualizar un usuario
 const updateUser = async (req, res) => {
     try {
         const updates = req.body;
