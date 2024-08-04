@@ -18,6 +18,7 @@ const closeModal = () => {
     document.getElementById('login-modal').style.display = 'none';
     document.getElementById('register-modal').style.display = 'none';
     document.getElementById('search-modal').style.display = 'none';
+    document.getElementById('searchInput').value = '';
 }
 
 // Función para registrar un usuario
