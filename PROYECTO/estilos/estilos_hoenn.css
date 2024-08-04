@@ -339,21 +339,21 @@ footer {
 
 #scrollTopBtn {
     display: none; /* Oculto por defecto */
-    position: fixed; /* Posición fija */
-    bottom: 20px; /* 20px desde abajo */
-    right: 30px; /* 30px desde la derecha */
-    z-index: 99; /* Asegurarse de que esté por encima de otros elementos */
-    border: none; /* Sin bordes */
-    outline: none; /* Sin outline */
-    background-color: #007bff; /* Color de fondo */
-    color: white; /* Color de texto */
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 20px; /* 20px desde la parte inferior */
+    right: 30px; /* 30px desde la parte derecha */
+    z-index: 99; /* Asegura que el botón esté por encima de otros elementos */
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno */
+    background-color: #0070c9; /* Color de fondo */
+    color: white; /* Color del texto */
     cursor: pointer; /* Cursor de mano */
-    padding: 15px; /* Espaciado interno */
+    padding: 15px; /* Relleno */
     border-radius: 10px; /* Bordes redondeados */
     font-size: 18px; /* Tamaño de fuente */
 }
 
 #scrollTopBtn:hover {
-    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+    background-color:#3b5998; /* Cambia el color al pasar el cursor */
 }
 

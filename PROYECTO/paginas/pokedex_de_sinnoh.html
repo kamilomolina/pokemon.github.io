@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex de Sinnoh</title>
+    <link rel="stylesheet" href="../estilos/estilos_sinnoh.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/pokedex_sinnoh.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html">
+                <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
+            </a>
+            <h1>Región de Sinnoh</h1>
+            <button class="login-button" onclick="openLoginModal()">Iniciar Sesión</button>
+            <button class="register-button" onclick="openRegisterModal()">Registrarse</button>
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Ir Arriba">↑</button>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pokedex_de_kanto.html">Región de Kanto</a></li>
+                <li><a href="pokedex_de_johto.html">Región de Johto</a></li>
+                <li><a href="pokedex_de_hoenn.html">Región de Hoenn</a></li>
+                <li><a href="pokedex_de_sinnoh.html" class="paginactual">Región de Sinnoh</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="region-sinnoh">
+            <h2>Región de Sinnoh</h2>
+            <p>La región de Sinnoh es una de las áreas principales en el mundo Pokémon. Es conocida por sus vastas montañas, sus numerosas rutas subterráneas y su historia rica en mitología. La región está basada en la isla japonesa de Hokkaido y es el escenario de los juegos de la cuarta generación: Pokémon Diamante, Perla y Platino.</p>
+            <p>Sinnoh es famosa por ser el hogar de muchos Pokémon Legendarios y Míticos, así como por su amplia variedad de Pokémon de diferentes tipos. La Liga Pokémon de Sinnoh es uno de los mayores desafíos que los Entrenadores pueden enfrentar.</p>
+        </section>
+        <section id="region-sinnoh">
+            <h2>Ciudades de Sinnoh</h2>
+            <ul>
+                <li>Pueblo Arena</li>
+                <li>Ciudad Jubileo</li>
+                <li>Ciudad Vetusta</li>
+                <li>Ciudad Rocavelo</li>
+                <li>Ciudad Pradera</li>
+                <li>Ciudad Canal</li>
+                <li>Ciudad Corazón</li>
+                <li>Ciudad Puntaneva</li>
+                <li>Ciudad Fractal</li>
+            </ul>
+            <div class="mapa-sinnoh">
+                <img src="../imagenes/otros/mapa_sinnoh.png" alt="Sinnoh">
+            </div>
+            <h2>Pokédex de Sinnoh</h2>
+        </section>
+        <div id="pokedex">
+            <!-- Los Pokémon de la región de Kanto se generarán aquí dinámicamente -->
+        </div>
+    </main>
+    
+    <footer>
+        <p>@Todos los derechos Reservados</p>
+        <div class="redes-sociales">
+            <a href="#" class="facebook"></a>
+            <a href="#" class="x"></a>
+            <a href="#" class="instagram"></a>
+        </div>
+    </footer>
+     <!-- Modal de registro -->
+     <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="header-content">
+                <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
+                <h1>Registrarse</h1>
+            </div>
+            <section id="register">
+                <h2>Registrarse</h2>
+                <input type="text" id="register-username" placeholder="Nombre de Usuario">
+                <input type="password" id="register-password" placeholder="Contraseña">
+                <button onclick="register()">Registrarse</button>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

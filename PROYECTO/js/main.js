@@ -80,6 +80,24 @@ const updateLoginButton = () => {
     }
 };
 
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+}
+
+// Función para hacer scroll hacia arriba
+function scrollToTop() {
+    document.body.scrollTop = 0; // Para Safari
+    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+}
 
 
 // Ejecutar la actualización del botón al cargar la página
