@@ -77,6 +77,25 @@ const deletePokemon = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+const searchPokemon = async (req, res) => {
+    try {
+        const query = req.params.query;
+
+        // Crear un objeto de criterios de búsqueda
+        const searchCriteria = {
+            $or: [
+                { nombre: new RegExp(query, 'i') }, // Buscar por nombre (insensible a mayúsculas/minúsculas)
+                { numero: isNaN(query) ? 0 : parseInt(query) } // Buscar por número si es un número
+            ]
+        };
+
+        const pokemon = await Pokemon.find(searchCriteria);
+        res.json(pokemon);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Server Error');
+    }
+};
 
 module.exports = {
     getAllPokemons,
@@ -85,5 +104,6 @@ module.exports = {
     createMultiplePokemons,
     updatePokemon,
     deletePokemon,
-    getPokemonsByRegion
+    getPokemonsByRegion,
+    searchPokemon
 };

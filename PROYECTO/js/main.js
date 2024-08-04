@@ -17,6 +17,7 @@ const closeModal = () => {
     console.log("Cerrar modal");
     document.getElementById('login-modal').style.display = 'none';
     document.getElementById('register-modal').style.display = 'none';
+    document.getElementById('search-modal').style.display = 'none';
 }
 
 // Función para registrar un usuario
@@ -97,8 +98,53 @@ function scrollFunction() {
 function scrollToTop() {
     document.body.scrollTop = 0; // Para Safari
     document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
-}
+};
 
+// Función para mostrar el modal de búsqueda
+const showSearchModal = (content) => {
+    const searchModal = document.getElementById('search-modal');
+    const searchResults = document.getElementById('search-results');
+    searchResults.innerHTML = content;
+    searchModal.style.display = 'block';
+};
+
+// Función para buscar Pokémon
+const searchPokemon = async () => {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    if (!searchInput) {
+        alert('Por favor, ingresa un nombre o número de Pokémon.');
+        return;
+    }
+
+    try {
+        const response = await axios.get(`${baseURL}/pokemons/search/${searchInput}`);
+        const results = response.data;
+
+        const searchResultsContainer = document.getElementById('search-results');
+        searchResultsContainer.innerHTML = '';
+
+        if (results.length > 0) {
+            results.forEach(pokemon => {
+                const pokemonElement = document.createElement('div');
+                pokemonElement.classList.add('pokemon');
+                pokemonElement.innerHTML = `
+                    <h2>${pokemon.numero} - ${pokemon.nombre}</h2>
+                    <p>Tipo: ${pokemon.tipo.join(', ')}</p>
+                    <p>Descripción: ${pokemon.descripcion}</p>
+                    <p>Habilidades: ${pokemon.habilidades.join(', ')}</p>
+                    <img src="${pokemon.imagen}" alt="${pokemon.nombre}">
+                `;
+                searchResultsContainer.appendChild(pokemonElement);
+            });
+            document.getElementById('search-modal').style.display = 'block';
+        } else {
+            alert('No se encontró ningún Pokémon con ese nombre o número.');
+        }
+    } catch (error) {
+        console.error('Error buscando Pokémon:', error);
+        alert('Hubo un error al realizar la búsqueda. Por favor, intenta de nuevo.');
+    }
+};
 
 // Ejecutar la actualización del botón al cargar la página
 document.addEventListener('DOMContentLoaded', updateLoginButton);

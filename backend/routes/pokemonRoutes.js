@@ -4,10 +4,11 @@ const PokemonController = require('../controllers/pokemonController');
 
 module.exports = (upload, authMiddleware) => {
     // Rutas públicas
+    router.get('/search/:query', PokemonController.searchPokemon);
     router.get('/', PokemonController.getAllPokemons);
     router.get('/:id', PokemonController.getPokemonById);
-    router.get('/region/:region', PokemonController.getPokemonsByRegion); // Nueva ruta para obtener Pokémon por región
-
+    router.get('/region/:region', PokemonController.getPokemonsByRegion);
+    
     // Rutas protegidas
     if (upload) {
         router.post('/', upload.single('imagen'), PokemonController.createPokemon);

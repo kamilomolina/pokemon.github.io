@@ -16,6 +16,10 @@
             <button class="login-button" onclick="openLoginModal()">Iniciar Sesión</button>
             <button class="register-button" onclick="openRegisterModal()">Registrarse</button>
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Ir Arriba">↑</button>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar Pokémon...">
+                <button onclick="searchPokemon()">Buscar</button>
+            </div>
         </div>
         <nav>
             <ul class="menu">
@@ -214,6 +218,12 @@
                 <input type="password" id="register-password" placeholder="Contraseña">
                 <button onclick="register()">Registrarse</button>
             </section>
+        </div>
+    </div>
+    <div id="search-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="search-results"></div>
         </div>
     </div>
 </body>
