@@ -12,7 +12,7 @@ header {
     text-align: center;
     padding: 20px 0;
     border-bottom: 1px solid #e0e0e0;
-    position: fixed;
+    position:static;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -60,11 +60,10 @@ nav ul li label:hover {
 }
 
 main {
-    padding: 140px 20px 20px;
+    padding: 0px 20px 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
-
 .contenido {
     display: flex;
     padding: 1em;

@@ -12,7 +12,7 @@ header {
     text-align: center;
     padding: 20px 0;
     border-bottom: 1px solid #e0e0e0;
-    position: fixed;
+    position:static;
     width: 100%; 
     top: 0;
     z-index: 1000; 
@@ -60,7 +60,7 @@ nav ul li label:hover {
 }
 
 main {
-    padding: 140px 20px 20px;
+    padding: 0px 20px 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -289,3 +289,175 @@ footer {
     text-decoration: none;
     color: #000;
 }
+
+.login-button {
+    background-color:darkslategrey;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para la ventana modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001; /* Por encima de la cabecera */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.login-button, .register-button {
+    background-color:darkslategrey;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.login-button {
+    position: absolute;
+    right: 150px;
+    top: 20px;
+}
+
+.register-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.login-button:hover, .register-button:hover {
+    background-color: #0056b3;
+}
+
+#scrollTopBtn {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija */
+    bottom: 20px; /* 20px desde abajo */
+    right: 30px; /* 30px desde la derecha */
+    z-index: 99; /* Asegurarse de que esté por encima de otros elementos */
+    border: none; /* Sin bordes */
+    outline: none; /* Sin outline */
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color de texto */
+    cursor: pointer; /* Cursor de mano */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño de fuente */
+}
+
+#scrollTopBtn:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+#search-filter {
+    position:absolute;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: rgba(248, 248, 248, 0.9);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+#searchInput, #typeFilter, #search-filter button {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+#search-filter button {
+    background-color:#3b5998;
+    color: black;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+}
+
+#search-filter button:hover {
+    background-color: #0056b3;
+}
+
+
+

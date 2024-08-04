@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokédex</title>
+    <title>Juegos Pokémon</title>
     <link rel="stylesheet" href="../estilos/estilos_index.css">
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-content">
             <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
             <h1>Juegos Pokémon</h1>
+            <button class="login-button" onclick="openLoginModal()">Iniciar Sesión</button>
+            <button class="register-button" onclick="openRegisterModal()">Registrarse</button>
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Ir Arriba">↑</button>
         </div>
         <nav>
             <ul class="menu">
-                <li><a href="index.html" class="paginactual">Inicio</a></li>
-                <li><a href="juegos.html">Juegos</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="juegos.html" class="paginactual">Juegos</a></li>
                 <li class="dropdown">
                     <input type="checkbox" id="regiones-toggle" class="dropdown-checkbox">
                     <label for="regiones-toggle">Regiones</label>
@@ -30,51 +34,51 @@
         </nav>
     </header>
 
-<main>
-    <div class="poke">
-        <img src="../imagenes/otros/poke.gif" alt="Poke">
-    </div>
-    <section id="juegos">
-        <h2>Primera Generación</h2>
-        <p>La región de Kanto es la primera región del mundo Pokémon y es el escenario de los juegos originales Pokémon Rojo y Azul, así como sus remakes Pokémon Rojo Fuego y Verde Hoja. Kanto también es explorada en Pokémon Amarillo.</p>
-        <h3>Juegos destacados:</h3>
-        <ul>
-            <li>Pokémon Rojo y Azul</li>
-            <li>Pokémon Rojo Fuego y Verde Hoja</li>
-        </ul>
-        <div class="fuego">
-            <img src="../imagenes/juegos/fuego.png" alt="Fuego">
+    <main>
+        <div class="poke">
+            <img src="../imagenes/otros/poke.gif" alt="Poke">
         </div>
-    </section>
+        <section id="juegos1">
+            <h2>Primera Generación</h2>
+            <p>La región de Kanto es la primera región del mundo Pokémon y es el escenario de los juegos originales Pokémon Rojo y Azul, así como sus remakes Pokémon Rojo Fuego y Verde Hoja. Kanto también es explorada en Pokémon Amarillo.</p>
+            <h3>Juegos destacados:</h3>
+            <ul>
+                <li>Pokémon Rojo y Azul</li>
+                <li>Pokémon Rojo Fuego y Verde Hoja</li>
+            </ul>
+            <div class="fuego">
+                <img src="../imagenes/juegos/fuego.png" alt="Fuego">
+            </div>
+        </section>
 
-    <section id="juegos">
-        <h2>Segunda Generación</h2>
-        <p>La región de Johto es la segunda región del mundo Pokémon, presentada en Pokémon Oro y Plata y sus remakes Pokémon Oro HeartGold y Plata SoulSilver. Johto es conocida por su rica tradición y conexión con la región de Kanto.</p>
-        <h3>Juegos destacados:</h3>
-        <ul>
-            <li>Pokémon Oro y Plata</li>
-            <li>Pokémon Cristal</li>
-            <li>Pokémon Oro HeartGold y Plata SoulSilver</li>
-        </ul>
-        <div class="Silver">
-            <img src="../imagenes/juegos/silver.png" alt="Silver">
-        </div>
-    </section>
+        <section id="juegos2">
+            <h2>Segunda Generación</h2>
+            <p>La región de Johto es la segunda región del mundo Pokémon, presentada en Pokémon Oro y Plata y sus remakes Pokémon Oro HeartGold y Plata SoulSilver. Johto es conocida por su rica tradición y conexión con la región de Kanto.</p>
+            <h3>Juegos destacados:</h3>
+            <ul>
+                <li>Pokémon Oro y Plata</li>
+                <li>Pokémon Cristal</li>
+                <li>Pokémon Oro HeartGold y Plata SoulSilver</li>
+            </ul>
+            <div class="silver">
+                <img src="../imagenes/juegos/silver.png" alt="Silver">
+            </div>
+        </section>
 
-    <section id="juegos">
-        <h2>Tercera Generación</h2>
-        <p>La región de Hoenn es la tercera región del mundo Pokémon, introducida en Pokémon Rubí y Zafiro y revisitada en Pokémon Esmeralda.</p>
-        <h3>Juegos destacados:</h3>
-        <ul>
-            <li>Pokémon Rubí y Zafiro</li>
-            <li>Pokémon Esmeralda</li>
-        </ul>
-        <div class="Esmeralda">
-            <img src="../imagenes/juegos/esmeralda.png" alt="Esmeralda">
-        </div>
-    </section>
-    
-    </footer>
+        <section id="juegos3">
+            <h2>Tercera Generación</h2>
+            <p>La región de Hoenn es la tercera región del mundo Pokémon, introducida en Pokémon Rubí y Zafiro y revisitada en Pokémon Esmeralda.</p>
+            <h3>Juegos destacados:</h3>
+            <ul>
+                <li>Pokémon Rubí y Zafiro</li>
+                <li>Pokémon Esmeralda</li>
+            </ul>
+            <div class="esmeralda">
+                <img src="../imagenes/juegos/esmeralda.png" alt="Esmeralda">
+            </div>
+        </section>
+    </main>
+
     <footer>
         <p>@Todos los derechos Reservados</p>
         <div class="redes-sociales">
@@ -83,5 +87,39 @@
             <a href="#" class="instagram"></a>
         </div>
     </footer>
+
+    <!-- Modal de inicio de sesión -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="header-content">
+                <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
+                <h1>Inicio de Sesión</h1>
+            </div>
+            <section id="login">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" id="login-username" placeholder="Nombre de Usuario">
+                <input type="password" id="login-password" placeholder="Contraseña">
+                <button onclick="login()">Iniciar Sesión</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modal de registro -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="header-content">
+                <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
+                <h1>Registrarse</h1>
+            </div>
+            <section id="register">
+                <h2>Registrarse</h2>
+                <input type="text" id="register-username" placeholder="Nombre de Usuario">
+                <input type="password" id="register-password" placeholder="Contraseña">
+                <button onclick="register()">Registrarse</button>
+            </section>
+        </div>
+    </div>
 </body>
 </html>

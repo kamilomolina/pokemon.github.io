@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex de Hoenn</title>
     <link rel="stylesheet" href="../estilos/estilos_hoenn.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/pokedex_hoenn.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-content">
             <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
             <h1>Región de Hoenn</h1>
+            <button class="login-button" onclick="openLoginModal()">Iniciar Sesión</button>
+            <button class="register-button" onclick="openRegisterModal()">Registrarse</button>
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Ir Arriba">↑</button>
         </div>
         <nav>
             <ul class="menu">
@@ -49,96 +55,7 @@
     <h2>POKÉDEX</h2>
         </section>
         <div id="pokedex">
-            <div class="pokemon">
-                <h2>252. Treecko</h2>
-                <img src="../imagenes/hoenn/treecko.png" alt="Treecko">
-                <div class="pokemon-details">
-                    <h4>Tipo: Planta</h4>
-                    <p>Tiene pequeñas púas en las plantas de los pies que le permiten andar por techos y paredes sin caerse</p>
-                    <p>Habilidades: Espesura</p>
-                </div>
-            </div>
-
-            <div class="pokemon">
-                <h2>253. Grovyle</h2>
-                <img src="../imagenes/hoenn/grovyle.png" alt="Grovyle">
-                <div class="pokemon-details">
-                    <h4>Tipo: Planta</h4>
-                    <p>Los desarrollados músculos de sus extremidades inferiores le proporcionan una tremenda agilidad y una portentosa capacidad de salto.</p>
-                    <p>Habilidades: Espesura</p>
-                </div>
-            </div>
-
-            <div class="pokemon">
-                <h2>254. Sceptile</h2>
-                <img src="../imagenes/hoenn/sceptile.png" alt="Sceptile">
-                <div class="pokemon-details">
-                    <h4>Tipo: Planta</h4>
-                    <p>Corretea ágil y veloz por la selva y emplea las afiladas hojas de sus brazos para darles el golpe de gracia a sus presas.</p>
-                    <p>Habilidades: Espesura</p>
-                </div>
-            </div>
-
-            <div class="pokemon">
-                <h2>255. Torchic</h2>
-                <img src="../imagenes/hoenn/torchic.png" alt="Torchic">
-                <div class="pokemon-details">
-                    <h4>Tipo: Fuego</h4>
-                    <p>Posee una saca de fuego en el abdomen, cuya llama arderá durante toda su vida. El calor que desprende resulta muy agradable al abrazarlo.</p>
-                    <p>Habilidades: Mar Llamas</p>
-                </div>
-            </div>
-
-            <div class="pokemon">
-                <h2>256. Combusken</h2>
-                <img src="../imagenes/hoenn/combusken.png" alt="Combusken">
-                <div class="pokemon-details">
-                    <h4>Tipo: Fuego, Lucha</h4>
-                    <p>Propina unas patadas demoledoras. Profiere potentes gritos para aguzar su concentración.</p>
-                    <p>Habilidades: Mar Llamas</p>
-                </div>
-            </div>
-
-            <div class="pokemon">
-                <h2>257. Blaziken</h2>
-                <img src="../imagenes/hoenn/blaziken.png" alt="Blaziken">
-                <div class="pokemon-details">
-                    <h4>Tipo: Fuego, Lucha</h4>
-                    <p>Ante un rival difícil, expulsa llamas por las muñecas. Tiene mucha fuerza en las patas; hasta puede saltar edificios.</p>
-                    <p>Habilidades: Mar Llamas</p>
-                </div>
-            </div>
-
-            <div class="pokemon">
-                <h2>258. Mudkip</h2>
-                <img src="../imagenes/hoenn/mudkip.png" alt="Mudkip">
-                <div class="pokemon-details">
-                    <h4>Tipo: Agua</h4>
-                    <p>Puede reducir a añicos grandes rocas. Descansa enterrado en el lodo del lecho de los ríos.</p>
-                    <p>Habilidades: Torrente</p>
-                </div>
-            </div>
-
-            <div class="pokemon">
-                <h2>259. Marshtomp</h2>
-                <img src="../imagenes/hoenn/marshtomp.png" alt="Marshtomp">
-                <div class="pokemon-details">
-                    <h4>Tipo: Agua, Tierra</h4>
-                    <p>Vive en terrenos cubiertos de lodo viscoso, lo que contribuye a que sus patas se fortalezcan y se vuelvan extremadamente robustas.</p>
-                    <p>Habilidades: Torrente</p>
-                </div>
-            </div>
-
-            <div class="pokemon">
-                <h2>260. Swampert</h2>
-                <img src="../imagenes/hoenn/swampert.png" alt="Swampert">
-                <div class="pokemon-details">
-                    <h4>Tipo: Agua, Tierra</h4>
-                    <p>Con sus brazos duros como una roca puede partir pedruscos gigantescos en mil pedazos de un solo golpe.</p>
-                    <p>Habilidades: Torrente</p>
-                </div>
-            </div>
-
+            <!-- Los Pokémon de la región de Kanto se generarán aquí dinámicamente -->
         </div>
     </main>
     <footer>
@@ -149,5 +66,38 @@
             <a href="#" class="instagram"></a>
         </div>
     </footer>
+      <!-- Modal de inicio de sesión -->
+      <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="header-content">
+                <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
+                <h1>Inicio de Sesión</h1>
+            </div>
+            <section id="login">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" id="login-username" placeholder="Nombre de Usuario">
+                <input type="password" id="login-password" placeholder="Contraseña">
+                <button onclick="login()">Iniciar Sesión</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modal de registro -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="header-content">
+                <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
+                <h1>Registrarse</h1>
+            </div>
+            <section id="register">
+                <h2>Registrarse</h2>
+                <input type="text" id="register-username" placeholder="Nombre de Usuario">
+                <input type="password" id="register-password" placeholder="Contraseña">
+                <button onclick="register()">Registrarse</button>
+            </section>
+        </div>
+    </div>
 </body>
 </html>
