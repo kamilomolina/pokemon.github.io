@@ -136,4 +136,28 @@ const searchPokemon = async () => {
     }
 };
 
+document.getElementById('login-username').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        login();
+    }
+});
+
+document.getElementById('login-password').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        login();
+    }
+});
+
+document.getElementById('register-username').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        register();
+    }
+});
+
+document.getElementById('register-password').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        register();
+    }
+});
+
 document.addEventListener('DOMContentLoaded', updateLoginButton);

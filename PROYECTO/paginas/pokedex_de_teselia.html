@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokédex de Sinnoh</title>
-    <link rel="stylesheet" href="../estilos/estilos_sinnoh.css">
+    <title>Pokédex de Kanto</title>
+    <link rel="stylesheet" href="../estilos/estilos_teselia.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../js/main.js" defer></script>
-    <script src="../js/pokedex_sinnoh.js" defer></script>
+    <script src="../js/pokedex_teselia.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
             <a href="index.html">
                 <img src="../imagenes/otros/logo-pokebola-transparent.png" alt="Logo" class="logo">
             </a>
-            <h1>Región de Sinnoh</h1>
+            <h1>Región de Teselia</h1>
             <button class="login-button" onclick="openLoginModal()">Iniciar Sesión</button>
             <button class="register-button" onclick="openRegisterModal()">Registrarse</button>
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Ir Arriba">↑</button>
@@ -23,43 +23,42 @@
         <nav>
             <ul class="menu">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="pokedex_de_kanto.html">Región de Kanto</a></li>
+                <li><a href="pokedex_de_sinnoh.html">Región de Sinnoh</a></li>
                 <li><a href="pokedex_de_johto.html">Región de Johto</a></li>
                 <li><a href="pokedex_de_hoenn.html">Región de Hoenn</a></li>
-                <li><a href="pokedex_de_sinnoh.html" class="paginactual">Región de Sinnoh</a></li>
-                <li><a href="pokedex_de_teselia.html">Región de Teselia</a></li>
+                <li><a href="pokedex_de_sinnoh.html">Región de Sinnoh</a></li>
+                <li><a href="pokedex_de_teselia.html" class="paginactual">Región de Teselia</a></li>
             </ul>
         </nav>
     </header>
-    
     <main>
-        <section id="region-sinnoh">
-            <h2>Región de Sinnoh</h2>
-            <p>La región de Sinnoh es una de las áreas principales en el mundo Pokémon. Es conocida por sus vastas montañas, sus numerosas rutas subterráneas y su historia rica en mitología. La región está basada en la isla japonesa de Hokkaido y es el escenario de los juegos de la cuarta generación: Pokémon Diamante, Perla y Platino.</p>
-            <p>Sinnoh es famosa por ser el hogar de muchos Pokémon Legendarios y Míticos, así como por su amplia variedad de Pokémon de diferentes tipos. La Liga Pokémon de Sinnoh es uno de los mayores desafíos que los Entrenadores pueden enfrentar.</p>
+        <section id="region-unova">
+            <h2>Región de Teselia</h2>
+            <p>La región de Unova o Teselia es una de las regiones más modernas y avanzadas en el mundo Pokémon. Está inspirada en la ciudad de Nueva York y sus alrededores, ofreciendo una mezcla de ambientes urbanos y naturales.</p>
+            <p>En Unova, los Entrenadores Pokémon pueden explorar ciudades vibrantes, rutas diversas y enfrentarse a líderes de gimnasio con gran experiencia. La región es conocida por su rica historia y su contribución al desarrollo de nuevas tecnologías en el mundo Pokémon.</p>
         </section>
-        <section id="region-sinnoh">
-            <h2>Ciudades de Sinnoh</h2>
+        
+        <section id="region-unova">
+            <h2>Ciudades de Teselia</h2>
             <ul>
-                <li>Pueblo Arena</li>
-                <li>Ciudad Jubileo</li>
-                <li>Ciudad Vetusta</li>
-                <li>Ciudad Rocavelo</li>
-                <li>Ciudad Pradera</li>
-                <li>Ciudad Canal</li>
-                <li>Ciudad Corazón</li>
-                <li>Ciudad Puntaneva</li>
-                <li>Ciudad Fractal</li>
+                <li>Pueblo Arcilla</li>
+                <li>Ciudad Porcelana</li>
+                <li>Ciudad Mayólica</li>
+                <li>Ciudad Loza</li>
+                <li>Ciudad Teja</li>
+                <li>Ciudad Hormigón</li>
+                <li>Ciudad Nimbasa</li>
+                <li>Ciudad Lacunosa</li>
+                <li>Ciudad Esmalte</li>
             </ul>
-            <div class="mapa-sinnoh">
-                <img src="../imagenes/otros/mapa_sinnoh.png" alt="Sinnoh">
+            <div class="mapa-unova">
+                <img src="../imagenes/otros/mapa_teselia.png" alt="Unova">
             </div>
-            <h2>Pokédex de Sinnoh</h2>
-        </section>
+            <h2>Pokédex de Teselia</h2>
+        </section> 
         <div id="pokedex">
         </div>
     </main>
-    
     <footer>
         <p>@Todos los derechos Reservados</p>
         <div class="redes-sociales">
@@ -68,7 +67,7 @@
             <a href="#" class="instagram"></a>
         </div>
     </footer>
-    <div id="login-modal" class="modal">
+     <div id="login-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <div class="header-content">
