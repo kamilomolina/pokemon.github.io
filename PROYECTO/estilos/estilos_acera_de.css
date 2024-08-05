@@ -341,3 +341,7 @@ footer {
 .login-button:hover, .register-button:hover {
     background-color: #0056b3;
 }
+
+#poke {
+    margin-top: 50px;
+}
