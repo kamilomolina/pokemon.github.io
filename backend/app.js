@@ -5,6 +5,7 @@ const multer = require('multer');
 const pokemonRoutes = require('./routes/pokemonRoutes');
 const userRoutes = require('./routes/userRoutes');
 const authMiddleware = require('./middleware/authMiddleware');
+const comentarioRoutes = require('./routes/comentarioRoutes');
 
 //multer para manejo de imágenes
 const storage = multer.diskStorage({
@@ -26,6 +27,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/pokemons', pokemonRoutes(upload, authMiddleware));
+app.use('/api/comentarios', comentarioRoutes);
 
 app.get('/', (req, res) => {
     res.send('Bienvenido a la Pokédex!');

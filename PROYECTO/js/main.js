@@ -1,14 +1,14 @@
-const baseURL = 'http://localhost:3000/api'; 
+const baseURL = 'http://localhost:3000/api';
 
 const openLoginModal = () => {
     console.log("Abrir modal de inicio de sesión");
     document.getElementById('login-modal').style.display = 'block';
-}
+};
 
 const openRegisterModal = () => {
     console.log("Abrir modal de registro");
     document.getElementById('register-modal').style.display = 'block';
-}
+};
 
 const closeModal = () => {
     console.log("Cerrar modal");
@@ -16,7 +16,7 @@ const closeModal = () => {
     document.getElementById('register-modal').style.display = 'none';
     document.getElementById('search-modal').style.display = 'none';
     document.getElementById('searchInput').value = '';
-}
+};
 
 const register = async () => {
     const username = document.getElementById('register-username').value;
@@ -25,11 +25,11 @@ const register = async () => {
 
     try {
         const response = await axios.post(`${baseURL}/users/register`, { username, password });
-        console.log(response.data); 
+        console.log(response.data);
         alert(response.data.message);
         closeModal();
     } catch (error) {
-        console.error(error.response.data); 
+        console.error(error.response.data);
         alert(error.response.data.message);
     }
 };
@@ -43,12 +43,12 @@ const login = async () => {
         const response = await axios.post(`${baseURL}/users/login`, { username, password });
         const token = response.data.token;
         localStorage.setItem('token', token);
-        localStorage.setItem('username', username); 
+        localStorage.setItem('username', username);
         updateLoginButton();
         alert('Login successful');
         closeModal();
     } catch (error) {
-        console.error(error.response.data); 
+        console.error(error.response.data);
         alert(error.response.data.message);
     }
 };
@@ -158,6 +158,63 @@ document.getElementById('register-password').addEventListener('keyup', function(
     if (event.key === 'Enter') {
         register();
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const comentarioForm = document.getElementById('comentario-form');
+    const comentarioTexto = document.getElementById('comentario-texto');
+    const comentariosList = document.getElementById('comentarios-list');
+
+    const isUserLoggedIn = () => {
+        return !!localStorage.getItem('token');
+    };
+
+    comentarioForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (!isUserLoggedIn()) {
+            alert('Debes iniciar sesión para enviar un comentario.');
+            return;
+        }
+
+        try {
+            const response = await axios.post('http://localhost:3000/api/comentarios', {
+                texto: comentarioTexto.value
+            }, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            const comentario = response.data.comentario;
+            agregarComentarioALista(comentario);
+            comentarioTexto.value = ''; 
+
+        } catch (error) {
+            console.error('Error al enviar el comentario:', error);
+        }
+    });
+
+    function agregarComentarioALista(comentario) {
+        const comentarioItem = document.createElement('div');
+        comentarioItem.classList.add('comentario-item');
+        comentarioItem.innerHTML = `<p>${comentario.texto}</p>`;
+        comentariosList.appendChild(comentarioItem);
+    }
+    async function cargarComentarios() {
+        try {
+            const response = await axios.get('http://localhost:3000/api/comentarios');
+            const comentarios = response.data;
+
+            comentarios.forEach(comentario => {
+                agregarComentarioALista(comentario);
+            });
+
+        } catch (error) {
+            console.error('Error al cargar los comentarios:', error);
+        }
+    }
+
+    cargarComentarios(); 
 });
 
 document.addEventListener('DOMContentLoaded', updateLoginButton);

@@ -289,7 +289,7 @@ footer {
 
 .modal-content input[type="text"],
 .modal-content input[type="password"] {
-    width: 100%;
+    width:96%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -345,3 +345,63 @@ footer {
 #poke {
     margin-top: 50px;
 }
+
+#comentarios {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 800px;
+}
+
+#comentarios h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#comentario-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#comentario-form textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+#comentario-form button {
+    padding: 10px;
+    background-color:#3b5998;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#comentario-form button:hover {
+    background-color: #3b5998;
+}
+
+#comentarios-list {
+    margin-top: 20px;
+}
+
+.comentario-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.comentario-item p {
+    margin: 0;
+}
+
+.comentario-item strong {
+    color: #333;
+}
+
+
